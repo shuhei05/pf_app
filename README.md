@@ -27,7 +27,8 @@
 
 ## 設計書
 ER図：https://app.diagrams.net/#G1yhjcJhrydmq20zw4r-AcK9F8vZlq07jn<br>
-テーブル定義書：https://docs.google.com/spreadsheets/d/1scPZaVfa8VkgmMR-4LqWdUgj8xiaHLLd-cJFGhprWIs/edit#gid=514769212
+テーブル定義書：https://docs.google.com/spreadsheets/d/1scPZaVfa8VkgmMR-4LqWdUgj8xiaHLLd-cJFGhprWIs/edit#gid=514769212<br>
+アプリケーション詳細設計：https://docs.google.com/spreadsheets/d/1aBSYYdLyipWL5WGxUrwqPX-cZjhZrIoPJeyd529afiM/edit#gid=563437082
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/10astIslC0Chfl2QMfH3LwkI2rQjZuWIpRzrNcmxJ2II/edit#gid=0
