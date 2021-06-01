@@ -19,17 +19,18 @@
 飲食店で働く方々。また飲食店と提携している受注先の方々。
 
 ### 主な利用シーン
-・商品の発注
-・商品の在庫管理
-・共有事項を投稿
-・従業員間で業務的なやりとりが必要な場合
-・商品の受注確認
+・商品の発注.
+・商品の在庫管理.
+・共有事項を投稿.
+・従業員間で業務的なやりとりが必要な場合.
+・商品の受注確認.
 
 ## 設計書
-ER図<https://app.diagrams.net/#G1yhjcJhrydmq20zw4r-AcK9F8vZlq07jn>
+ER図 https://app.diagrams.net/#G1yhjcJhrydmq20zw4r-AcK9F8vZlq07jn.
+テーブル定義書 https://docs.google.com/spreadsheets/d/1scPZaVfa8VkgmMR-4LqWdUgj8xiaHLLd-cJFGhprWIs/edit#gid=514769212
 
 ## チャレンジ要素一覧
-<https://docs.google.com/spreadsheets/d/10astIslC0Chfl2QMfH3LwkI2rQjZuWIpRzrNcmxJ2II/edit#gid=0>
+https://docs.google.com/spreadsheets/d/10astIslC0Chfl2QMfH3LwkI2rQjZuWIpRzrNcmxJ2II/edit#gid=0
 
 ## 開発環境
 - OS：Linux(CentOS)
