@@ -1,0 +1,30 @@
+<header class="sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="/"><span>restaurant management</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+        <% if admin_signed_in? %>
+          <li><%= link_to '商品一覧', admin_products_path,class: 'nav-link text-dark' %></li>
+          <li><%= link_to '注文履歴一覧', admin_orders_path ,class: 'nav-link text-dark'%></li>
+          <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete,class: 'nav-link text-drak' %></li>
+        <% elsif user_signed_in? %>
+          <li><%= link_to '従業員一覧', users_path,class: 'nav-link text-drak' %></li>
+          <li><%= link_to '商品一覧', products_path,class: 'nav-link text-drak' %></li>
+          <li><%= link_to 'カート', cart_items_path,class: 'nav-link text-drak' %></li>
+          <li><%= link_to '共有事項', shares_path,class: 'nav-link text-drak' %></li>
+          <li><%= link_to '発注一覧', orders_path,class: 'nav-link text-dark' %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class: 'nav-link text-drak' %></li>
+        <% else %>
+        　<li><%= link_to '発注先ログイン', new_admin_session_path ,class: 'nav-link text-drak'%></li>
+          <li><%= link_to 'ログイン', new_user_session_path ,class: 'nav-link text-drak'%></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
