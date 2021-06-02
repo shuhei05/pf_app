@@ -66,7 +66,7 @@ gem "devise"
 gem "jquery-rails"
 gem 'jquery-turbolinks'
 
-gem 'bootstrap', '~> 4.5'
+gem 'bootstrap','~> 4.5'
 
 gem "pry-byebug"
 

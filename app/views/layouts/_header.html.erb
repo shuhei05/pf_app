@@ -21,7 +21,7 @@
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete,class: 'nav-link text-drak' %></li>
         <% else %>
         　<li><%= link_to '発注先ログイン', new_admin_session_path ,class: 'nav-link text-drak'%></li>
-          <li><%= link_to 'ログイン', new_user_session_path ,class: 'nav-link text-drak'%></li>
+          <li><%= link_to '飲食店ログイン', new_user_session_path ,class: 'nav-link text-drak'%></li>
         <% end %>
         </ul>
       </div>
