@@ -11,5 +11,36 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
+
+  root :to => 'homes#top'
+
+  namespace :admin do
+    resources :products, only: [:index, :show, :new, :create, :edit, :update]
+    resources :orders, only: [:index, :show]
+    resources :order_details, only: [:update]
+  end
+
+  resources :users, only: [:index, :show]
+
+  resources :products, only: [:index]
+
+  resources :cart_items do
+    collection do
+    delete 'destroy_all'
+   end
+  end
+
+  resources :orders, only: [:index, :show, :create,] do
+    collection do
+      post :confirm
+      get :complete
+    end
+  end
+
+  resources :shares, only: [:index, :create, :edit, :update, :destory]
+
+  get 'chat/:id' => 'chats#show', as: 'chat'
+  resources :chats, only: [:create]
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
