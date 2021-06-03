@@ -1,0 +1,58 @@
+<div class="container mt-3">
+  <h3>受注詳細</h3>
+ <div class="row">
+   <table class="table">
+      <thead class="thead-lignt">
+        <tr>
+          <th>受注時間</th>
+          <th>発注者</th>
+          <th>発注者電話番号</th>
+          <th>発注者住所</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @order.created_at.strftime("%Y/%m/%d")%></td>
+          <td><%= @order.user.name %></td>
+          <td><%= @order.user.phone_number %></td>
+          <td><%= @order.user.postal_code %></td>
+        </tr>
+      </tbody>
+    </table>
+ </div>
+ <div class="row">
+   <table class="table">
+      <thead class="thead-lignt">
+        <tr>
+          <th>受注商品</th>
+          <th>数量</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order_detalis.each do |order_detali| %>
+        <tr>
+          <td><%= order_detalis.product.name %></td>
+          <td><%= order_detalis.quantity %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+ </div>
+     <div class="form-group">
+        <%= form_with model: [:admin, @order], local:true do |f| %>
+           <label for="name">発送状況</label><br>
+                <div class="col-xs-5">
+                  <%= f.radio_button :is_active, true %>
+                  <%= f.label :is_active, '未発送', value:true, class:'mr-3' %>
+                  <%= f.radio_button :is_active, false %>
+                  <%= f.label :is_active, '発送済み', value:false %>
+                </div>
+           <%= f.submit "更新", class:"btn btn-success" %>
+         <% end %>
+      </div>
+      <div class="row">
+        <div class="ml-auto mb-3">
+         <%= link_to '受注一覧へ', admin_orders_path,class: 'btn btn-info' %>
+        </div>
+      </div>
+</div>
