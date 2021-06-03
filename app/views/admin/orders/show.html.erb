@@ -42,10 +42,10 @@
         <%= form_with model: [:admin, @order], local:true do |f| %>
            <label for="name">発送状況</label><br>
                 <div class="col-xs-5">
-                  <%= f.radio_button :is_active, true %>
-                  <%= f.label :is_active, '未発送', value:true, class:'mr-3' %>
                   <%= f.radio_button :is_active, false %>
-                  <%= f.label :is_active, '発送済み', value:false %>
+                  <%= f.label :is_active, '未発送', value:false, class:'mr-3' %>
+                  <%= f.radio_button :is_active, true %>
+                  <%= f.label :is_active, '発送済み', value:true %>
                 </div>
            <%= f.submit "更新", class:"btn btn-success" %>
          <% end %>

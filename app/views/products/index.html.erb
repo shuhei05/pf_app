@@ -15,7 +15,12 @@
         <tr>
           <td><%= product.name %></td>
           <td><%= product.introduction %></td>
-          <td></td>
+          <td>
+            <%#= form_with model:product do |f| %>
+              <%#= f.number_field :quantity, max: 100,min: 0, value:0%>
+              <%#= f.submit "数量更新", class: "btn btn-success" %>
+            <%# end %>
+          </td>
           <td></td>
         </tr>
         <% end %>
