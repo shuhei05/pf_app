@@ -7,7 +7,9 @@
           <th>商品名</th>
           <th>商品概要</th>
           <th>残数</th>
-          <th></th>
+          <th>残数更新</th>
+          <th>発注数</th>
+          <th>決定</th>
         </tr>
       </thead>
       <tbody>
@@ -21,7 +23,12 @@
               <%#= f.submit "数量更新", class: "btn btn-success" %>
             <%# end %>
           </td>
-          <td></td>
+          <td>残数更新btn</td>
+              <%= form_for @cart_item, url: cart_items_path(@cart_item) do |f| %>
+              <%= f.hidden_field :product_id, value: product.id %>
+          <td><%= f.select :quantity, [*(1..10)], {selected: 1} %></td>
+          <td><%= f.submit "in", class: "btn btn-primary" %></td>
+              <% end %>
         </tr>
         <% end %>
       </tbody>
