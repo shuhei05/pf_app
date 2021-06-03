@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   root :to => 'homes#top'
 
   namespace :admin do
-    resources :products, only: [:index, :show, :new, :create, :edit, :update]
+    resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :orders, only: [:index, :show]
     resources :order_details, only: [:update]
   end

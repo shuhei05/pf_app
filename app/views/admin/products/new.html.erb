@@ -1,0 +1,16 @@
+<div class="container">
+  <h3>商品登録</h3>
+  <div class="row">
+    <div class="mx-auto w-auto">
+      <div class="form-group">
+        <%= form_with model: [:admin, @product], local:true do |f| %>
+         <label for="name">商品名</label><br>
+         <%= f.text_field :name,class:'col-10' %><br>
+         <label for="introduction">商品概要</label>
+         <%= f.text_area :introduction,class:'col-10' %>
+         <%= f.submit '商品登録', class:'btn btn-info' %>
+         <% end %>
+      </div>
+    </div>
+  </div>
+</div>
