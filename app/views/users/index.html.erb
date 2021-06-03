@@ -1,0 +1,17 @@
+<div class="container mt-3 mr-5">
+  <div class="row">
+    <div class="d-flex flex-wrap">
+      <% @users.each do |user| %>
+      <div class="card bg-light border-info mr-3" style="max-width: 18rem;">
+        <div class="card-header"><%= user.name %></div>
+        <div class="card-body text-secondary">
+          <p class="card-text">email:<%= user.email %></p>
+          <!--<p class="card-text">住所:<%#= user.postal_code %></p>-->
+          <!--<p class="card-text">電話番号:<%#= user.phone_number %></p>-->
+          <p><%#= link_to '業務連絡', chat_path(@user.id), class:"btn btn-info" %></p>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

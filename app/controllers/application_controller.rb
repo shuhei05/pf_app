@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     when Admin
       admin_products_path  #Adminのログイン後
     when User
-      products_path         #Userのログイン後
+      users_path         #Userのログイン後
     end
   end
 
