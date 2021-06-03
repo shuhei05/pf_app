@@ -1,0 +1,25 @@
+<div class="container mt-3">
+  <h3>発注可能商品一覧</h3>
+  <div class="row">
+    <table class="table">
+      <thead class="thead-lignt">
+        <tr>
+          <th>商品名</th>
+          <th>商品概要</th>
+          <th>残数</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.introduction %></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
