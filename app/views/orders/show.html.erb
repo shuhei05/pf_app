@@ -1,2 +1,23 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+<div class="container mt-3">
+  <h3>発注詳細</h3>
+  <div class="row">
+    <table class="table">
+      <thead class="thead-lignt">
+        <tr>
+          <th>発注時間</th>
+          <th>発注者</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @order.created_at.strftime("%Y/%m/%d")%></td>
+          <td><%= @order.user.name %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <%= link_to "注文一覧へ", orders_path, class: 'btn btn-info' %>
+</div>
+<% @order_detalis.each do |order_detali| %>
+<%= order_detali.product.name %>
+<% end %>
