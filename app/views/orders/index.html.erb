@@ -1,0 +1,25 @@
+<div class="container mt-3">
+  <h3>受注一覧</h3>
+  <div class="row">
+    <table class="table">
+      <thead class="thead-lignt">
+        <tr>
+          <th>受注時間</th>
+          <th>発注者</th>
+          <th>注文概要</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.created_at.strftime("%Y/%m/%d")%></td>
+          <td><%= order.user.name %></td>
+          <td><%= order.introduction %></td>
+          <td><%= link_to"受注詳細へ",order_path(order.id), class:"btn btn-info" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
