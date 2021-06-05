@@ -6,7 +6,7 @@ class CartItemsController < ApplicationController
   def create
     @cart_items = current_user.cart_items.all
     cart_item_params.each do |cart_item_param|
-      cart_item = @cart_items.find_by(product_id: cart_item_param['product_id'])
+      cart_item = @cart_items.find_by(product_id: cart_item_param['product_id']) #カートに入れる商品idとカートに入っている商品id取得
       if cart_item.nil?
         # カゴの中に同じ商品がなかった場合
         current_user.cart_items.create(cart_item_param)
@@ -19,7 +19,7 @@ class CartItemsController < ApplicationController
     # カートのリフレッシュ
     @cart_items = current_user.cart_items.all
     redirect_to cart_items_path
-  
+
     # @cart_item = CartItem.new(cart_item_params)
     # @cart_item.user_id = current_user.id #誰のカートか紐付け
     # @cart_items = current_user.cart_items.all

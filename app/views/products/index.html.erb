@@ -14,10 +14,10 @@
       <tbody>
         <% @products.each do |product| %>
           <tr>
-            <%= f.hidden_field 'cart_item[][product_id]', value: product.id %>
+            <%= f.hidden_field 'cart_item[][product_id]', value: product.id %> <!--カートアイテムモデルの商品idを配列で渡す-->
             <td><%= product.name %></td>
             <td><%= product.introduction %></td>
-            <td><%= f.select 'cart_item[][quantity]', [*(0..10)], {selected: 0} %></td>
+            <td><%= f.select 'cart_item[][quantity]', [*(0..10)], {selected: 0} %></td> <!--カートアイテムモデルの個数を配列で渡す-->
           </tr>
         <% end %>
         <tr>
@@ -27,7 +27,7 @@
       </table>
     <% end %>
     </div>
-    
+
     <div class="col-6">
       <h3>在庫管理</h3>
       <%= form_with model: Product, url: update_all_products_url, method: :post, local: true, class: 'table' do |f| %>
@@ -42,10 +42,10 @@
         <tbody>
           <% @products.each do |product| %>
             <tr>
-              <%= f.hidden_field 'product[][id]', value: product.id %>
+              <%= f.hidden_field 'product[][id]', value: product.id %> <!--商品idを配列で渡す-->
               <td><%= product.name %></td>
               <td><%= product.introduction %></td>
-              <td><%= f.select 'product[][quantity]', [*(0..100)], {selected: product.quantity} %></td>
+              <td><%= f.select 'product[][quantity]', [*(0..100)], {selected: product.quantity} %></td> <!--商品の個数を配列で渡す-->
             </tr>
           <% end %>
           <tr>
