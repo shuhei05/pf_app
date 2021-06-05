@@ -5,16 +5,21 @@ class ProductsController < ApplicationController
     @cart_item = CartItem.new
   end
 
-  def update
-    @product = Product.find(params[:id])
-    @product.update(product_params)
+  def update_all
+    product_update_quantity_params.each do |param|
+      product = Product.find(param['id'])
+      product.update(param)
+    end
     redirect_to products_path, notice: '数量更新しました'
   end
 
   private
 
-  def product_params
+  def product_update_params
     params.require(:product).permit(:name, :introduction, :quantity)
   end
 
+  def product_update_quantity_params
+    params.require(:product).permit(product: [:id, :quantity])["product"]
+  end
 end

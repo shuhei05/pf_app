@@ -1,37 +1,59 @@
 <div class="container mt-3">
-  <h3>発注可能商品一覧</h3>
   <div class="row">
-    <table class="table">
+    <div class="col-6">
+    <h3>発注可能商品一覧</h3>
+    <%= form_with model: @cart_item, url: cart_items_path(@cart_item), local: true, class: 'table' do |f| %>
+    <table style="table-layout: fixed; width: 100%;">
       <thead class="thead-lignt">
         <tr>
           <th>商品名</th>
           <th>商品概要</th>
-          <th>残数</th>
-          <th>残数更新</th>
           <th>発注数</th>
-          <th>決定</th>
         </tr>
       </thead>
       <tbody>
         <% @products.each do |product| %>
-        <tr>
-          <td><%= product.name %></td>
-          <td><%= product.introduction %></td>
-          <td>
-            <%#= form_with model:product do |f| %>
-              <%#= f.number_field :quantity, max: 100,min: 0, value:0%>
-              <%#= f.submit "数量更新", class: "btn btn-success" %>
-            <%# end %>
-          </td>
-          <td>残数更新btn</td>
-              <%= form_for @cart_item, url: cart_items_path(@cart_item) do |f| %>
-              <%= f.hidden_field :product_id, value: product.id %>
-          <td><%= f.select :quantity, [*(1..10)], {selected: 1} %></td>
-          <td><%= f.submit "in", class: "btn btn-primary" %></td>
-              <% end %>
-        </tr>
+          <tr>
+            <%= f.hidden_field 'cart_item[][product_id]', value: product.id %>
+            <td><%= product.name %></td>
+            <td><%= product.introduction %></td>
+            <td><%= f.select 'cart_item[][quantity]', [*(0..10)], {selected: 0} %></td>
+          </tr>
         <% end %>
-      </tbody>
-    </table>
+        <tr>
+          <td colspan='3' style='text-align: end'><%= f.submit "発注", class: "btn btn-primary" %></td>
+        </tr>
+       </tbody>
+      </table>
+    <% end %>
+    </div>
+    
+    <div class="col-6">
+      <h3>在庫管理</h3>
+      <%= form_with model: Product, url: update_all_products_url, method: :post, local: true, class: 'table' do |f| %>
+      <table style="table-layout: fixed; width: 100%;">
+        <thead class="thead-lignt">
+          <tr>
+            <th>商品名</th>
+            <th>商品概要</th>
+            <th>残数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+            <tr>
+              <%= f.hidden_field 'product[][id]', value: product.id %>
+              <td><%= product.name %></td>
+              <td><%= product.introduction %></td>
+              <td><%= f.select 'product[][quantity]', [*(0..100)], {selected: product.quantity} %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <td colspan='3' style='text-align: end'><%= f.submit "更新", class: "btn btn-primary" %></td>
+          </tr>
+         </tbody>
+        </table>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -28,12 +28,16 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
 
-  resources :products, only: [:index]
+  resources :products, only: [:index] do
+    collection do
+      post 'update_all'
+    end
+  end
 
   resources :cart_items do
     collection do
-    delete 'destroy_all'
-   end
+      delete 'destroy_all'
+    end
   end
 
   resources :orders, only: [:index, :show, :create,] do
