@@ -37,7 +37,7 @@ class CartItemsController < ApplicationController
   def update
     @cart_item = CartItem.find(params[:id])
     @cart_item.update(cart_item_params)
-    redirect_to cart_items_path, notice: '数量変更しました'
+    redirect_to cart_items_path, notice: '数量変更しました' #全部変更できるようにコードを変更する。
   end
 
   def destroy
