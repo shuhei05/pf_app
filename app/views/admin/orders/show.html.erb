@@ -1,6 +1,7 @@
 <div class="container mt-3">
   <h3>受注詳細</h3>
  <div class="row">
+   <div class ="col-md-6">
    <table class="table">
       <thead class="thead-lignt">
         <tr>
@@ -19,8 +20,8 @@
         </tr>
       </tbody>
     </table>
- </div>
- <div class="row">
+    </div>
+ <div class="col-md-6">
    <table class="table">
       <thead class="thead-lignt">
         <tr>
@@ -31,28 +32,33 @@
       <tbody>
         <% @order_detalis.each do |order_detali| %>
         <tr>
-          <td><%= order_detalis.product.name %></td>
-          <td><%= order_detalis.quantity %></td>
+          <td><%= order_detali.product.name %></td>
+          <td><%= order_detali.quantity %></td>
         </tr>
         <% end %>
       </tbody>
     </table>
  </div>
+ </div>
+  <div class ="row">
+    <div class="ml-auto mb-5 ">
      <div class="form-group">
+       <div class="ml-5 mb-3">
         <%= form_with model: [:admin, @order], local:true do |f| %>
            <label for="name">発送状況</label><br>
-                <div class="col-xs-5">
+                <div class="ml-5">
                   <%= f.radio_button :is_active, false %>
-                  <%= f.label :is_active, '未発送', value:false, class:'mr-3' %>
+                  <%= f.label :is_active, '未発送', value:false %>
                   <%= f.radio_button :is_active, true %>
                   <%= f.label :is_active, '発送済み', value:true %>
                 </div>
-           <%= f.submit "更新", class:"btn btn-success" %>
+           <%= f.submit "発送完了", class:"btn btn-success" %>
          <% end %>
+         </div>
       </div>
-      <div class="row">
-        <div class="ml-auto mb-3">
-         <%= link_to '受注一覧へ', admin_orders_path,class: 'btn btn-info' %>
-        </div>
+          <div class="ml-auto ml-5">
+          <%= link_to '受注一覧へ', admin_orders_path,class: 'btn btn-info' %>
+          </div>
       </div>
+    </div>
 </div>

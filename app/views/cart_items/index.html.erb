@@ -1,6 +1,10 @@
 <div class="container mt-3">
   <h3>発注商品一覧</h3>
   <div class="row">
+    <% if @cart_items.empty?%>
+        <div class="mt-3 ml-5">カート内に商品がありません</div>
+    <% else %>
+    <%= form_with model: CartItem, url: update_all_cart_items_url, method: :post, local: true, class: 'table' do |f| %>
     <table class="table">
       <thead class="thead-lignt">
         <tr>
@@ -8,26 +12,27 @@
           <th>商品概要</th>
           <th>発注数</th>
           <th></th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
         <% @cart_items.each do |cart_item| %>
         <tr>
+          <%= f.hidden_field 'crat_item[][id]', value: cart_item.id %>
           <td><%= cart_item.product.name %></td>
           <td><%= cart_item.product.introduction %></td>
-          <td><%= form_with model:cart_item do |f| %>
-              <%= f.number_field :quantity, max: 10,min: 1 %>
-          </td>
-          <td><%= f.submit "数量変更", class: "btn btn-success" %></td>
-          <% end %>
+          <td><%= f.select 'cart_item[][quantity]', [*(0..20)], {selected: cart_item.quantity} %></td>
           <td><%=link_to "削除", cart_item_path(cart_item),method: :delete, class: "btn btn-danger" %></td>
         </tr>
-        <% end %>
+          <% end %>
+         <tr>
+            <td colspan='4' style='text-align: end'><%= f.submit "数量更新", class: "btn btn-primary" %></td>
+          </tr>
       </tbody>
     </table>
+    <% end %>
   <div class="ml-auto">
-  <div class="ml-5"><%= link_to "発注", confirm_orders_path,method: :post, class: 'btn btn-success' %></div>
+  <div class="ml-5"><%= link_to "発注確認画面へ", confirm_orders_path,method: :post, class: 'btn btn-success' %></div>
   </div>
   </div>
+  <% end %>
 </div>

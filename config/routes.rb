@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
-    resources :orders, only: [:index, :show]
+    resources :orders, only: [:index, :show, :update]
     resources :order_details, only: [:update]
   end
 
@@ -36,6 +36,7 @@ Rails.application.routes.draw do
 
   resources :cart_items do
     collection do
+      post 'update_all'
       delete 'destroy_all'
     end
   end

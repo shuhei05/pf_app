@@ -4,18 +4,18 @@ class Admin::OrdersController < ApplicationController
   end
 
   def show
-    @order = Oder.find(params[:id])
+    @order = Order.find(params[:id])
     @order_detalis = @order.order_detalis
   end
 
   def update
     @order = Order.find(params[:id])
     @order.update(order_params)
-    redirect_to admin_order_path(@order.id)
+    redirect_to admin_orders_path,notice: '発送状況変更しました'
   end
-  
+
   private
-  
+
   def order_params
     params.require(:order).permit(:user_id, :is_active)
   end

@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
       product = Product.find(param['id'])
       product.update(param)
     end
-    redirect_to products_path, notice: '数量更新しました'
+    redirect_to products_path, notice: '在庫数更新しました'
   end
 
   private
