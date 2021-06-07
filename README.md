@@ -23,7 +23,8 @@
 ・商品の在庫管理<br>
 ・共有事項を投稿<br>
 ・従業員間で業務的なやりとりが必要な場合<br>
-・発注先にて商品の受注確認
+・発注先にて商品の受注確認<br>
+・発注先にて受注可能商品の管理
 
 ## 設計書
 ER図：https://app.diagrams.net/#G1yhjcJhrydmq20zw4r-AcK9F8vZlq07jn<br>
