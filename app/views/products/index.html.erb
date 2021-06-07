@@ -18,11 +18,15 @@
             <%= f.hidden_field 'cart_item[][product_id]', value: product.id %> <!--カートアイテムモデルの商品idを配列で渡す-->
             <td><%= product.name %></td>
             <td><%= product.introduction %></td>
-            <td><%= f.select 'cart_item[][quantity]', [*(0..10)], {selected: 0} %></td> <!--カートアイテムモデルの個数を配列で渡す-->
             <td><% if product.is_active == false %>
-                  <p class="text-success">注文可能</p>
+                <%= f.select 'cart_item[][quantity]', [*(0..10)], {selected: 0} %>
                 <% else %>
-                  <p class="text-black-50">注文不可</p>
+                ×</td> <!--カートアイテムモデルの個数を配列で渡す-->
+                <% end %>
+            <td><% if product.is_active == false %>
+                  <div class="text-success">注文可能</div>
+                <% else %>
+                  <div class="text-black-50">注文不可</div>
                 <% end %>
             </td>
           </tr>
@@ -36,7 +40,7 @@
     </div>
 
     <div class="col-6">
-      <h3>在庫管理</h3>
+      <h3>店舗在庫管理</h3>
       <%= form_with model: Product, url: update_all_products_url, method: :post, local: true, class: 'table' do |f| %>
       <table style="table-layout: fixed; width: 100%;">
         <thead class="thead-lignt">

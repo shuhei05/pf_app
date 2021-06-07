@@ -6,17 +6,21 @@
         <tr>
           <th>受注時間</th>
           <th>発注者</th>
-          <th>注文概要</th>
+          <th>発送状況</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <% @orders.each do |order| %>
+        <% @orders.reverse.each do |order| %>
         <tr>
           <td><%= order.created_at.strftime("%Y/%m/%d")%></td>
           <td><%= order.user.name %></td>
-          <td><%= order.introduction %></td>
-          <td><%= link_to"受注詳細へ",order_path(order.id), class:"btn btn-info" %></td>
+          <td><% if order.is_active == false %>
+                  <p class="text-black-50">未発送</p>
+                <% else %>
+                  <p class="text-success">発送済み</p>
+                <% end %></td>
+          <td><%= link_to"発注詳細へ",order_path(order.id), class:"btn btn-info" %></td>
         </tr>
         <% end %>
       </tbody>

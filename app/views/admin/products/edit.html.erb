@@ -10,9 +10,9 @@
          <%= f.text_area :introduction,class:'col-10' %><br>
          <lavel for="is_active">販売状況</lavel>
          <%= f.radio_button :is_active, false %>
-         <%= f.label :is_active, '注文可', value:false %>
+         <%= f.label :is_active, '受注可', value:false %>
          <%= f.radio_button :is_active, true %>
-         <%= f.label :is_active, '注文不可', value:true %>
+         <%= f.label :is_active, '受注不可', value:true %>
          <%= f.submit '変更を保存', class:'btn btn-info' %>
          <% end %>
       </div>

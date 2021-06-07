@@ -19,9 +19,9 @@
           <td><%= product.name %></td>
           <td><%= product.introduction %></td>
           <td><% if product.is_active == false %>
-                  <p class="text-success">注文可能</p>
+                  <p class="text-success">受注可</p>
                 <% else %>
-                  <p class="text-black-50">注文不可</p>
+                  <p class="text-black-50">受注不可</p>
                 <% end %>
           </td>
           <td><%= link_to"編集",edit_admin_product_path(product.id), class:"btn btn-success" %></td>

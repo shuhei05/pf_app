@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'orders/index'
-  get 'orders/show'
-  get 'cart_items/index'
-  get 'products/index'
-  get 'users/index'
-  get 'users/show'
+  # get 'shares/index'
+  # get 'shares/new'
+  # get 'shares/edit'
+  # get 'orders/index'
+  # get 'orders/show'
+  # get 'cart_items/index'
+  # get 'products/index'
+  # get 'users/index'
+  # get 'users/show'
    devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
@@ -48,7 +51,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :shares, only: [:index, :create, :edit, :update, :destory]
+  resources :shares
 
   get 'chat/:id' => 'chats#show', as: 'chat'
   resources :chats, only: [:create]

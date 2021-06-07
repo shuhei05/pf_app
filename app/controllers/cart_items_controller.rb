@@ -29,12 +29,6 @@ class CartItemsController < ApplicationController
     redirect_to cart_items_path, notice: '数量変更しました'
   end
 
-  # def update
-  #   @cart_item = CartItem.find(params[:id])
-  #   @cart_item.update(cart_item_params)
-  #   redirect_to cart_items_path, notice: '数量変更しました'
-  # end
-
   def destroy
     cart_item = CartItem.find(params[:id])
     cart_item.destroy
@@ -52,6 +46,7 @@ class CartItemsController < ApplicationController
     end
   end
 
+  # カートアイテムの個数変更用
   def cart_item_update_quantity_params
     params.require(:cart_item).permit(cart_item: [:id, :quantity])["cart_item"]
   end
