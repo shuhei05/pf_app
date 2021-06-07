@@ -9,7 +9,7 @@
         <tr>
           <th>商品名</th>
           <th>商品概要</th>
-          <th></th>
+          <th>販売状況</th>
           <th></th>
         </tr>
       </thead>
@@ -18,6 +18,12 @@
         <tr>
           <td><%= product.name %></td>
           <td><%= product.introduction %></td>
+          <td><% if product.is_active == false %>
+                  <p class="text-success">注文可能</p>
+                <% else %>
+                  <p class="text-black-50">注文不可</p>
+                <% end %>
+          </td>
           <td><%= link_to"編集",edit_admin_product_path(product.id), class:"btn btn-success" %></td>
           <td><%= link_to"削除",admin_product_path(product.id), method: :delete, class:"btn btn-danger" %></td>
         </tr>

@@ -7,7 +7,12 @@
          <label for="name">商品名</label><br>
          <%= f.text_field :name,class:'col-10' %><br>
          <label for="introduction">商品概要</label>
-         <%= f.text_area :introduction,class:'col-10' %>
+         <%= f.text_area :introduction,class:'col-10' %><br>
+         <lavel for="is_active">販売状況</lavel>
+         <%= f.radio_button :is_active, false %>
+         <%= f.label :is_active, '注文可', value:false %>
+         <%= f.radio_button :is_active, true %>
+         <%= f.label :is_active, '注文不可', value:true %>
          <%= f.submit '変更を保存', class:'btn btn-info' %>
          <% end %>
       </div>

@@ -1,8 +1,5 @@
 class Admin::OrderDetalisController < ApplicationController
-  
-  def show
-  @order_detalis = @order.order_detalis
-  end
+
 
   private
 
