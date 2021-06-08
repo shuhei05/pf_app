@@ -13,6 +13,19 @@
   </div>
   <div class="card-body">
     <p class="card-text"><%= share.share_information %></p>
+    <% if share.favorited_by?(current_user) %>
+    <div class='text-right mr-5'>
+      <%= link_to share_favorites_path(share), method: :delete do %>
+        <i class="fas fa-check check1"></i><%= share.favorites.count %>
+      <% end %>
+    </div>
+    <% else %>
+    <div class='text-right mr-5'>
+      <%= link_to share_favorites_path(share), method: :post do %>
+        <i class="fas fa-check check2"></i><%= share.favorites.count %>
+      <% end %>
+    </div>
+    <% end %>
     <% if share.user == current_user %>
     <%= link_to"編集",edit_share_path(share.id), class:"btn btn-secondary" %>
     <%= link_to"削除",share_path(share.id), method: :delete, class:"btn btn-secondary" %>

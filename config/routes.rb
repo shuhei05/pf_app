@@ -52,7 +52,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :shares
+  resources :shares do
+    resource :favorites, only: [:create, :destroy]
+  end
 
   get 'chat/:id' => 'chats#show', as: 'chat'
   resources :chats, only: [:create]

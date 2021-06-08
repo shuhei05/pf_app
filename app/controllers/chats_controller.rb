@@ -4,10 +4,7 @@ class ChatsController < ApplicationController
     @user = User.find(params[:id])
     rooms = current_user.user_rooms.pluck(:room_id)  # ログインしているユーザーのuser_roomにあるroom_idの値の配列をroomsに代入。
 
-    # user_roomモデルから
-    # user_idがチャット相手のidが一致するものと、
-    # room_idが上記roomsのどれかに一致するレコードを
-    # user_roomsに代入。
+    # user_roomモデルからuser_idがチャット相手のidが一致するものと、room_idが上記roomsのどれかに一致するレコードをuser_roomsに代入。
     user_rooms = UserRoom.find_by(user_id: @user.id, room_id: rooms)
 
     unless user_rooms.nil? # もしuser_roomが空でないなら
