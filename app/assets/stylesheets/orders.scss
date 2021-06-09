@@ -1,3 +1,31 @@
 // Place all the styles related to the orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table_border_radius {
+  border-radius: 15px;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+.table_border_radius tr th:first-child {
+  border-left: none;
+}
+.table_border_radius tr th:last-child {
+  border-right: none;
+}
+
+.table_border_radius tr td:first-child {
+  border-left: none;
+}
+.table_border_radius tr td:last-child {
+  border-right: none;
+}
+
+.table_border_radius tr:first-child th {
+  border-top: none;
+}
+
+.table_border_radius tr:last-child td {
+  border-bottom: none;
+}

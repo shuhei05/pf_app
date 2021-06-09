@@ -21,3 +21,26 @@
 #notice {
   color: green;
 }
+
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #EEFFFF;
+}
+
+main {
+  background-color: #DDFFFF;
+  flex: 1;
+}
+
+footer {
+  background-color: #DDFFFF;
+}
+
+h3 {
+  color: #FF9872;
+}

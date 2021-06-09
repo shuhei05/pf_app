@@ -5,8 +5,8 @@
         <div class="mt-3 ml-5">カート内に商品がありません</div>
     <% else %>
     <%= form_with model: CartItem, url: update_all_cart_items_url, method: :post, local: true, class: 'table' do |f| %>
-    <table class="table">
-      <thead class="thead-lignt">
+    <table class="table table-bordered table_border_radius table-success">
+      <thead>
         <tr>
           <th>商品名</th>
           <th>商品概要</th>
@@ -21,17 +21,17 @@
           <td><%= cart_item.product.introduction %></td>
           <td><%= f.hidden_field 'cart_item[][id]', value: cart_item.id %>
           <%= f.select 'cart_item[][quantity]', [*(0..20)], {selected: cart_item.quantity} %></td>
-          <td><%=link_to "削除", cart_item_path(cart_item),method: :delete, class: "btn btn-danger" %></td>
+          <td><%=link_to "削除", cart_item_path(cart_item),method: :delete, class: "btn btn-outline-danger" %></td>
         </tr>
           <% end %>
          <tr>
-            <td colspan='4' style='text-align: end'><%= f.submit "数量更新", class: "btn btn-primary" %></td>
+            <td colspan='4' style='text-align: end'><%= f.submit "数量更新", class: "btn btn-outline-primary" %></td>
           </tr>
       </tbody>
     </table>
     <% end %>
   <div class="ml-auto">
-  <div class="ml-5"><%= link_to "発注確認画面へ", confirm_orders_path,method: :post, class: 'btn btn-success' %></div>
+  <div class="ml-5"><%= link_to "発注確認画面へ", confirm_orders_path,method: :post, class: 'btn btn-outline-success' %></div>
   </div>
   </div>
   <% end %>

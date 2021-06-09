@@ -1,8 +1,9 @@
 <div class="container mt-3">
   <h3>発注確認画面</h3>
   <div class="row">
+    <div class="mx-auto w-auto">
    <%= form_with model: @order, local: true, url: {action: :create}, method: :post do |f| %>
-    <table class="table">
+    <table class="table table_border_radius table-info mx-auto mt-3" style="table-layout: fixed; width: 60%;">
       <thead class="thead-lignt">
         <tr>
           <th>商品名</th>
@@ -21,15 +22,17 @@
       </tbody>
     </table>
   </div>
+  </div>
   <div class="row">
-      <div class="mx-auto">
-      <%= f.label :introduction, '何かあればご記入ください' %>
-      <%= f.text_area :introduction, class:'col-5' %>
+      <div class="form-group ml-auto">
+      <label for="introduction">何かあればご記入ください</label>
+      <%= f.label :introduction, ':　　　　　　　　　' %><br>
+      <%= f.text_area :introduction, class:"form-control" %>
       </div>
   </div>
   <div class="row">
       <div class="ml-auto">
-      <%= f.submit "確定", class:"btn btn-success" %>
+      <%= f.submit "確定", class:"btn btn-outline-danger" %>
       <% end %>
       </div>
   </div>

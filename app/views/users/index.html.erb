@@ -1,6 +1,7 @@
 <div class="container mt-3 mr-5">
+  <h3>従業員一覧</h3>
   <div class="row">
-    <div class="d-flex flex-wrap">
+    <div class="d-flex flex-wrap mt-3 ml-3">
       <% @users.each do |user| %>
       <div class="card bg-light border-info mr-3" style="max-width: 18rem;">
         <div class="card-header"><%= user.name %></div>

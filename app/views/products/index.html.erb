@@ -1,10 +1,38 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-6">
+      <h3>店舗在庫管理</h3>
+      <%= form_with model: Product, url: update_all_products_url, method: :post, local: true, class: 'table' do |f| %>
+      <table class="table table-bordered table_border_radius table-primary">
+        <thead>
+          <tr>
+            <th>商品名</th>
+            <th>商品概要</th>
+            <th>残数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @products.each do |product| %>
+            <tr>
+              <%= f.hidden_field 'product[][id]', value: product.id %> <!--商品idを配列で渡す-->
+              <td><%= product.name %></td>
+              <td><%= product.introduction %></td>
+              <td><%= f.select 'product[][quantity]', [*(0..100)], {selected: product.quantity} %></td> <!--商品の個数を配列で渡す-->
+            </tr>
+          <% end %>
+            <tr>
+            <td colspan='3' style="text-align: end"><%= f.submit "更新", class: "btn btn-outline-primary" %></td>
+          </tr>
+         </tbody>
+        </table>
+      <% end %>
+    </div>
+
+    <div class="col-6">
     <h3>発注可能商品一覧</h3>
     <%= form_with model: @cart_item, url: cart_items_path(@cart_item), local: true, class: 'table' do |f| %>
-    <table style="table-layout: fixed; width: 100%;">
-      <thead class="thead-lignt">
+    <table class="table table-bordered table_border_radius table-success">
+      <thead>
         <tr>
           <th>商品名</th>
           <th>商品概要</th>
@@ -32,39 +60,11 @@
           </tr>
         <% end %>
         <tr>
-          <td colspan='4' style='text-align: end'><%= f.submit "発注", class: "btn btn-primary" %></td>
+          <td colspan='4' style='text-align: end'><%= f.submit "発注", class: "btn btn-outline-success" %></td>
         </tr>
        </tbody>
       </table>
     <% end %>
-    </div>
-
-    <div class="col-6">
-      <h3>店舗在庫管理</h3>
-      <%= form_with model: Product, url: update_all_products_url, method: :post, local: true, class: 'table' do |f| %>
-      <table style="table-layout: fixed; width: 100%;">
-        <thead class="thead-lignt">
-          <tr>
-            <th>商品名</th>
-            <th>商品概要</th>
-            <th>残数</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @products.each do |product| %>
-            <tr>
-              <%= f.hidden_field 'product[][id]', value: product.id %> <!--商品idを配列で渡す-->
-              <td><%= product.name %></td>
-              <td><%= product.introduction %></td>
-              <td><%= f.select 'product[][quantity]', [*(0..100)], {selected: product.quantity} %></td> <!--商品の個数を配列で渡す-->
-            </tr>
-          <% end %>
-          <tr>
-            <td colspan='3' style='text-align: end'><%= f.submit "更新", class: "btn btn-primary" %></td>
-          </tr>
-         </tbody>
-        </table>
-      <% end %>
     </div>
   </div>
 </div>
