@@ -4,7 +4,7 @@ class SharesController < ApplicationController
   before_action :share_user,   only: [:edit, :update, :delete]
 
   def index
-    @shares = Share.all
+    @shares = Share.all.page(params[:page]).per(3)
   end
 
   def new
@@ -15,7 +15,7 @@ class SharesController < ApplicationController
     @share = Share.new(share_params)
     @share.user_id = current_user.id
     if @share.save
-      redirect_to shares_path
+      redirect_to shares_path, notice: '作成しました'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class SharesController < ApplicationController
   def update
     @share = Share.find(params[:id])
     if @share.update(share_params)
-      redirect_to shares_path
+      redirect_to shares_path, notice: '変更しました'
     else
       render :edit
     end

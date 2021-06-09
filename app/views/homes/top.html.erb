@@ -1,15 +1,23 @@
-<div class="container mt-5">
+<div class="container mt-5 top" style="background-color:white; width:50rem;">
     <div class='row'>
         <div class="mx-auto">
             <h1 id="animation">restaurant management</h1>
         </div>
     </div>
 </div>
-<div class="container mt-5">
+<div class="container mt-5 ">
     <div class='row'>
-        <div class="mx-auto">
+      <div class="col-md-6" >
+        <div class="ml-3 top" style="text-align: center; background-color:white;">
+            <p style="color:#FF9872;">発注先企業様のログインはこちら</p>
             <%= link_to '発注先ログイン', new_admin_session_path,class: 'btn btn-info' %>
+        </div>
+      </div>
+      <div class="col-md-6" >
+        <div class="mr-3 top" style="text-align: center; background-color:white;">
+            <p style="color:#FF9872;">飲食店企業様のログインはこちら</p>
             <%= link_to '飲食店ログイン', new_user_session_path,class: 'btn btn-secondary' %>
         </div>
+      </div>
     </div>
 </div>

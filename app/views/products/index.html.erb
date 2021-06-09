@@ -3,7 +3,7 @@
     <div class="col-6">
       <h3>店舗在庫管理</h3>
       <%= form_with model: Product, url: update_all_products_url, method: :post, local: true, class: 'table' do |f| %>
-      <table class="table table-bordered table_border_radius table-primary">
+      <table class="table table-bordered border-dark table_border_radius table-light">
         <thead>
           <tr>
             <th>商品名</th>
@@ -31,7 +31,7 @@
     <div class="col-6">
     <h3>発注可能商品一覧</h3>
     <%= form_with model: @cart_item, url: cart_items_path(@cart_item), local: true, class: 'table' do |f| %>
-    <table class="table table-bordered table_border_radius table-success">
+    <table class="table table-bordered border-dark table_border_radius table-light">
       <thead>
         <tr>
           <th>商品名</th>

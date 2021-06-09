@@ -18,7 +18,7 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-#notice {
+.notice {
   color: green;
 }
 
@@ -49,4 +49,12 @@ h3 {
 margin: 50px 0;
 font-size: 40px;
 font-weight: bold;
+}
+
+.table > thead > tr > th{
+    border:1px solid #C0C0C0;
+}
+
+.table > tbody > tr > td{
+    border:1px solid #C0C0C0;
 }
