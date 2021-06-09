@@ -2,7 +2,9 @@
   <h3>発注商品一覧</h3>
   <div class="row">
     <% if @cart_items.empty?%>
-        <div class="mt-3 ml-5">カート内に商品がありません</div>
+      <div class="w-auto mx-auto mt-3">
+        <h4 class="mt-3 ml-5">カート内に商品がありません</h4>
+      </div>
     <% else %>
     <%= form_with model: CartItem, url: update_all_cart_items_url, method: :post, local: true, class: 'table' do |f| %>
     <table class="table table-bordered table_border_radius table-success">

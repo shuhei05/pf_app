@@ -1,23 +1,25 @@
 <div class="container">
   <div class="row">
     <h3 class="ml-5">共有事項</h3>
-    <div class="ml-auto"><%= link_to"共有事項作成",new_share_path, class:"btn btn-secondary" %></div>
+    <div class="ml-auto"><%= link_to"共有事項作成",new_share_path, class:"btn btn-outline-secondary" %></div>
   </div>
   <div class="row">
     <div class="mx-auto w-auto mt-3">
     <div class="col_md_8">
     <% @shares.each do |share| %>
+    <div class="mb-3">
     <div class="card" style="width: 50rem;">
-  <div class="card-header">
+  <div class="card-header" style="background-color: #FFE4E1;">
     <%= share.share_information_title %>
   </div>
   <div class="card-body">
     <p class="card-text"><%= share.share_information %></p>
       <%= render 'favorites/favorite', share: share %>
     <% if share.user == current_user %>
-    <%= link_to"編集",edit_share_path(share.id), class:"btn btn-secondary" %>
-    <%= link_to"削除",share_path(share.id), method: :delete, class:"btn btn-secondary" %>
+    <%= link_to"編集",edit_share_path(share.id), class:"btn btn-outline-secondary" %>
+    <%= link_to"削除",share_path(share.id), method: :delete, class:"btn btn-outline-secondary" %>
     <% end %>
+  </div>
   </div>
   </div>
   <% end %>

@@ -47,7 +47,7 @@
             <td><%= product.name %></td>
             <td><%= product.introduction %></td>
             <td><% if product.is_active == false %>
-                <%= f.select 'cart_item[][quantity]', [*(0..10)], {selected: 0} %>
+                <%= f.select 'cart_item[][quantity]', [*(0..20)], {selected: 0} %>
                 <% else %>
                 ×</td> <!--カートアイテムモデルの個数を配列で渡す-->
                 <% end %>

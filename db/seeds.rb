@@ -30,3 +30,11 @@ User.create!(
   name: "cさん",
   postal_code: "333333",
   phone_number: "33333333333")
+
+
+User.create!(
+  email: "ddd@ddd",
+  password: "dddddd",
+  name: "dさん",
+  postal_code: "444444",
+  phone_number: "44444444444")
