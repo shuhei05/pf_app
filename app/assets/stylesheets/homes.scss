@@ -4,4 +4,19 @@
 
 .top{
    border-radius: 20px;
+   border: medium solid #808080;
+   margin-top: 90px;
+}
+
+#animation {
+margin: 50px 0;
+font-size: 40px;
+font-weight: bold;
+}
+
+.homes{
+   background-image: image-url('background.png');
+   background-size: cover;
+   background-position: top;
+  // background-repeat: no-repeat;
 }

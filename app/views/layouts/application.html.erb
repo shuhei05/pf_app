@@ -11,9 +11,9 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <main>
+    <main class='<%= controller.controller_name %>'>
       <p id="success"><%= flash[:success] %></p>
-      <p id="alert"><%= flash[:alert] %></p>
+      <p id="container alert"><%= flash[:alert] %></p>
       <p class="container notice"><%= flash[:notice] %></p>
     <%= yield %>
     </main>
