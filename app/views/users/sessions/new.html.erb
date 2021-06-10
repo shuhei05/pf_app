@@ -1,23 +1,24 @@
 <div class="container mt-3">
   <div class="row">
-    <div class="mx-auto">
-<h2>飲食店ログイン</h2>
-
+    <div class="mx-auto login1">
+<h3 class="mt-3">飲食店ログイン</h3>
+<div class="form-group" style="width:40rem;">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",class:'col-5' %>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.password_field :password, autocomplete: "current-password",class:'col-5' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="actions mt-1">
+    <%= f.submit "Log in", class: 'btn btn-outline-success' %>
   </div>
 <% end %>
     </div>
+   </div>
   </div>
 </div>
