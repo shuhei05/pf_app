@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   def index
     @orders = Order.all.page(params[:page]).per(8)
+    #@orders = Order.order(updated_at: :desc).page(params[:page]).per(8)
   end
 
   def confirm

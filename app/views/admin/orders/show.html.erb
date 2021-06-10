@@ -2,10 +2,10 @@
   <h3>受注詳細</h3>
  <div class="row">
    <div class ="col-md-7">
-   <table class="table">
-      <thead class="thead-lignt">
+   <table class="table table_border_radius border-dark table-bordered table-light">
+      <thead>
         <tr>
-          <th>受注時間</th>
+          <th>受注日</th>
           <th>発注者</th>
           <th>発注元電話番号</th>
           <th>発注概要</th>
@@ -22,8 +22,8 @@
     </table>
     </div>
  <div class="col-md-5">
-   <table class="table">
-      <thead class="thead-lignt">
+   <table class="table table_border_radius border-dark table-bordered table-light">
+      <thead>
         <tr>
           <th>受注商品</th>
           <th>数量</th>
@@ -52,11 +52,11 @@
                   <%= f.radio_button :is_active, true %>
                   <%= f.label :is_active, '発送済み', value:true %>
                 </div>
-           <%= f.submit "発送完了", class:"btn btn-success" %>
+           <%= f.submit "発送状況変更", class:"btn btn-success" %>
          <% end %>
          </div>
       </div>
-          <div class="ml-auto ml-5">
+          <div class="ml-5">
           <%= link_to '受注一覧へ', admin_orders_path,class: 'btn btn-info' %>
           </div>
       </div>

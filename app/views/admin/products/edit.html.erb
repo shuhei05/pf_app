@@ -1,21 +1,19 @@
 <div class="container">
   <h3>商品編集</h3>
   <div class="row">
-    <div class="mx-auto w-auto">
-      <div class="form-group">
+      <div class="form-group form-group ml-3" style="width:50rem;">
         <%= form_with model: [:admin, @product], local:true do |f| %>
          <label for="name">商品名</label><br>
          <%= f.text_field :name,class:'col-10' %><br>
-         <label for="introduction">商品概要</label>
+         <label for="introduction">商品概要</label><br>
          <%= f.text_area :introduction,class:'col-10' %><br>
-         <lavel for="is_active">販売状況</lavel>
+         <lavel for="is_active">販売状況：</lavel>
          <%= f.radio_button :is_active, false %>
          <%= f.label :is_active, '受注可', value:false %>
          <%= f.radio_button :is_active, true %>
-         <%= f.label :is_active, '受注不可', value:true %>
+         <%= f.label :is_active, '受注不可', value:true %><br>
          <%= f.submit '変更を保存', class:'btn btn-info' %>
          <% end %>
-      </div>
     </div>
   </div>
 </div>

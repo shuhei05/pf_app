@@ -4,12 +4,13 @@
       <div class="d-flex ml-auto mb-3">
         <div><%= link_to"商品登録",new_admin_product_path, class:"btn btn-secondary" %></div>
       </div>
-    <table class="table">
-      <thead class="thead-lignt">
+    <table class="table table_border_radius border-dark table-bordered table-light">
+      <thead>
         <tr>
           <th>商品名</th>
           <th>商品概要</th>
           <th>販売状況</th>
+          <th>販売状況編集</th>
           <th></th>
         </tr>
       </thead>
@@ -24,7 +25,14 @@
                   <p class="text-black-50">受注不可</p>
                 <% end %>
           </td>
-          <td><%= link_to"編集",edit_admin_product_path(product.id), class:"btn btn-success" %></td>
+          <td style=":width:20rem;"><%= form_with model: [:admin, product], local:true do |f| %>
+              <%= f.radio_button :is_active, false %>
+              <%= f.label :is_active, '受注可', value:false %>
+              <%= f.radio_button :is_active, true %>
+              <%= f.label :is_active, '受注不可', value:true %>
+              <%= f.submit '変更を保存', class:'btn btn-outline-success'%>
+              <% end %>
+            <%#= link_to"編集",edit_admin_product_path(product.id), class:"btn btn-success" %></td>
           <td><%= link_to"削除",admin_product_path(product.id), method: :delete, class:"btn btn-danger" %></td>
         </tr>
         <% end %>

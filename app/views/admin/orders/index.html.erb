@@ -1,7 +1,7 @@
 <div class="container mt-3">
   <h3>受注一覧</h3>
   <div class="row">
-    <table class="table">
+    <table class="table table_border_radius border-dark table-bordered table-light">
       <thead class="thead-lignt">
         <tr>
           <th>受注時間</th>
@@ -27,5 +27,6 @@
         <% end %>
       </tbody>
     </table>
+    <div class="mx-auto"><%= paginate @orders%></div>
   </div>
 </div>
