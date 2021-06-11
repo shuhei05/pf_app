@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :chats
   has_many :rooms, through: :user_rooms
   has_many :favorites, dependent: :destroy
+  has_many :admin_notices ,dependent: :destroy
 
   validates :email, :name, :postal_code, :phone_number, presence: true
 

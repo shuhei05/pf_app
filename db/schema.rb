@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_074203) do
+ActiveRecord::Schema.define(version: 2021_06_11_053934) do
+
+  create_table "admin_notices", force: :cascade do |t|
+    t.string "information_title"
+    t.text "information_body"
+    t.integer "admin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -84,6 +92,14 @@ ActiveRecord::Schema.define(version: 2021_06_08_074203) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "share_information_title"
+  end
+
+  create_table "user_notices", force: :cascade do |t|
+    t.string "information_title"
+    t.text "information_body"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_rooms", force: :cascade do |t|

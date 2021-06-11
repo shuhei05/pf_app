@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <h3 class="ml-5">発注先からのお知らせ</h3>
+    <div class="ml-auto"><%= link_to"発注先へのお知らせ作成",new_admin_admin_notice_path, class:"btn btn-secondary" %></div>
+  </div>
+  <div class="row">
+    <div class="mx-auto w-auto mt-3">
+    <div class="col_md_8">
+    <% @user_notices.reverse.each do |user_notice| %>
+    <div class="mb-3">
+    <div class="card border-dark" style="width: 50rem;">
+  <div class="card-header" style="background-color: #FFE4E1;">
+    <%= user_notice.information_title %>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= user_notice.information_body %></p>
+
+  </div>
+  </div>
+  </div>
+  <% end %>
+  </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="mx-auto"><%= paginate @user_notices%></div>
+  </div>
+</div>
