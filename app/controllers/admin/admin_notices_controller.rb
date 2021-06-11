@@ -4,6 +4,10 @@ class Admin::AdminNoticesController < ApplicationController
     @user_notices = UserNotice.all.page(params[:page]).per(3)
   end
 
+  def users
+    @users = User.all
+  end
+
   def new
     @admin_notice = AdminNotice.new
   end

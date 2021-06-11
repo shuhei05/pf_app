@@ -28,7 +28,11 @@ Rails.application.routes.draw do
     resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :orders, only: [:index, :show, :update]
     resources :order_details, only: [:update]
-    resources :admin_notices, only: [:index, :new, :create]
+    resources :admin_notices, only: [:index, :new, :create,] do
+      collection do
+        get :users
+      end
+    end
   end
 
   resources :users, only: [:index, :show]

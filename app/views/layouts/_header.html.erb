@@ -9,6 +9,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
         <% if admin_signed_in? %>
+          <li><%= link_to '発注者連絡先', users_admin_admin_notices_path,class: 'nav-link text-dark' %></li>
           <li><%= link_to '商品一覧', admin_products_path,class: 'nav-link text-dark' %></li>
           <li><%= link_to '受注一覧', admin_orders_path ,class: 'nav-link text-dark'%></li>
           <li><%= link_to '発注先からのお知らせ', admin_admin_notices_path,class: 'nav-link text-dark' %></li>
