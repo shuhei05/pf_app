@@ -17,7 +17,7 @@
       <%= render 'favorites/favorite', share: share %>
     <% if share.user == current_user %>
     <%= link_to"編集",edit_share_path(share.id), class:"btn btn-secondary" %>
-    <%= link_to"削除",share_path(share.id), method: :delete, class:"btn btn-secondary" %>
+    <%= link_to"削除",share_path(share.id), method: :delete, data: { confirm: "【確認】削除してもよろしいですか？" },class:"btn btn-secondary" %>
     <% end %>
   </div>
   </div>
