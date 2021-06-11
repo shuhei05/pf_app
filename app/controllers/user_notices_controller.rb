@@ -18,6 +18,8 @@ class UserNoticesController < ApplicationController
     end
   end
 
+  private
+
   def user_notice_params
     params.require(:user_notice).permit(:information_title, :information_body)
   end
