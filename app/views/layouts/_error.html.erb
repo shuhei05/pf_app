@@ -1,10 +1,12 @@
-<% if object.errors.any? %>
-  <div id="error_explanation" class="alert alert-danger">
-    <h3><%= pluralize(object.errors.count, "error") %> prohibited this object from being saved:</h3>
+<% if model.errors.any? %>
+  <div class="alert alert-warning">　<!--該当するエラーをリストにして表示する-->
     <ul>
-    <% object.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-    <% end %>
+      <% model.errors.full_messages.each do |message| %>
+        <li>
+        <%= message %>
+        </li>
+      <% end %>
     </ul>
-  <div>
+  </div>
 <% end %>
+<!--errorを表示したいviewのf.objectのobjectはformのブロック変数に対して使用する事でブロック内でモデルオブジェクトを呼び出す事が出来る。-->

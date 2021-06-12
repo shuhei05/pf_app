@@ -4,7 +4,7 @@ class SharesController < ApplicationController
   before_action :share_user,   only: [:edit, :update, :delete]
 
   def index
-    @shares = Share.all.page(params[:page]).per(3)
+    @shares = Share.order(created_at: :desc).page(params[:page]).per(3)
   end
 
   def new

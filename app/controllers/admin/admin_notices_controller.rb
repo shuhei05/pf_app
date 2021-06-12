@@ -1,7 +1,7 @@
 class Admin::AdminNoticesController < ApplicationController
 
   def index
-    @user_notices = UserNotice.all.page(params[:page]).per(3)
+    @user_notices = UserNotice.order(created_at: :desc).page(params[:page]).per(3)
   end
 
   def users
