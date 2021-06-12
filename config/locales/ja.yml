@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    attributes:
+      share:
+        share_information_title: タイトル
+        share_information: 共有事項
+      user_notice:
+        information_title: タイトル
+        information_body: 内容
+      admin_notice:
+        information_title: タイトル
+        information_body: 内容
+      product:
+        name: 商品名
+        introduction: 商品概要
