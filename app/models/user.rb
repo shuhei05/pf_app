@@ -13,6 +13,6 @@ class User < ApplicationRecord
 
   validates :email, :name, :postal_code, :phone_number, presence: true
 
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
 end

@@ -1,25 +1,14 @@
 Rails.application.routes.draw do
 
   get 'chats/show'
-  # get 'shares/index'
-  # get 'shares/new'
-  # get 'shares/edit'
-  # get 'orders/index'
-  # get 'orders/show'
-  # get 'cart_items/index'
-  # get 'products/index'
-  # get 'users/index'
-  # get 'users/show'
    devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:     'admins/passwords',
-    #registrations: 'admins/registrations'
   }
 
   devise_for :users, controllers: {
     sessions:      'users/sessions',
     passwords:     'users/passwords',
-    #registrations: 'users/registrations'
   }
 
   root :to => 'homes#top'
