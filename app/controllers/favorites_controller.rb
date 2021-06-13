@@ -1,5 +1,7 @@
 class FavoritesController < ApplicationController
 
+  before_action :authenticate_user!
+
   def create
     share = Share.find(params[:share_id])
     favorite = current_user.favorites.new(share_id: share.id)

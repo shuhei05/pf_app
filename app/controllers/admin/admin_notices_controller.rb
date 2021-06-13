@@ -1,5 +1,8 @@
 class Admin::AdminNoticesController < ApplicationController
 
+  before_action :authenticate_admin!
+
+
   def index
     @user_notices = UserNotice.order(created_at: :desc).page(params[:page]).per(3)
   end
