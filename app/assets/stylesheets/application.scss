@@ -18,7 +18,13 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-.notice {
+#notice {
+  margin-left: 150px;
+  color: green;
+}
+
+#alert {
+  margin-left: 150px;
   color: green;
 }
 
