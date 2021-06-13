@@ -35,6 +35,12 @@ class CartItemsController < ApplicationController
     redirect_to cart_items_path, notice: '削除しました'
   end
 
+  def destroy_all
+    @cart_items = current_user.cart_items
+    @cart_items.destroy_all
+    redirect_to cart_items_path, notice: 'カート内商品全て削除しました'
+  end
+
   private
 
   # viewから送られてきたカートに追加したい商品
