@@ -4,7 +4,7 @@
 
 .top{
    border-radius: 20px;
-   border: medium solid #666666;
+   border: medium solid black;
    margin-top: 90px;
    font-weight: bold;
    background-color:#EEFFFF;
@@ -17,8 +17,8 @@ font-weight: bold;
 }
 
 .homes{
-   background-image: image-url('background.png');
+   background-image: image-url('background.jpg');
    background-size: cover;
-   background-position: top;
+   background-position: center;
   // background-repeat: no-repeat;
 }
