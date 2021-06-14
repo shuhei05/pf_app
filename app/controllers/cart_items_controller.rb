@@ -1,5 +1,4 @@
 class CartItemsController < ApplicationController
-
   before_action :authenticate_user!
 
   def index
@@ -9,7 +8,7 @@ class CartItemsController < ApplicationController
   def create
     @cart_items = current_user.cart_items.all
     cart_item_params.each do |cart_item_param|
-      cart_item = @cart_items.find_by(product_id: cart_item_param['product_id']) #カートに入れる商品idとカートに入っている商品id取得
+      cart_item = @cart_items.find_by(product_id: cart_item_param['product_id']) # カートに入れる商品idとカートに入っている商品id取得
       if cart_item.nil?
         # カゴの中に同じ商品がなかった場合
         current_user.cart_items.create(cart_item_param)

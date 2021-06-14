@@ -1,7 +1,6 @@
 class SharesController < ApplicationController
-
   before_action :authenticate_user!
-  before_action :share_user,   only: [:edit, :update, :delete]
+  before_action :share_user, only: [:edit, :update, :delete]
 
   def index
     @shares = Share.order(created_at: :desc).page(params[:page]).per(3)
@@ -50,5 +49,4 @@ class SharesController < ApplicationController
   def share_params
     params.require(:share).permit(:share_information_title, :share_information)
   end
-
 end

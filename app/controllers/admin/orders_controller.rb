@@ -1,5 +1,4 @@
 class Admin::OrdersController < ApplicationController
-  
   before_action :authenticate_admin!
 
   def index
@@ -14,7 +13,7 @@ class Admin::OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     @order.update(order_params)
-    redirect_to admin_orders_path,notice: '発送状況変更しました'
+    redirect_to admin_orders_path, notice: '発送状況変更しました'
   end
 
   private

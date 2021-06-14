@@ -1,10 +1,9 @@
 class ProductsController < ApplicationController
-
   before_action :authenticate_user!
 
   def index
     @products = Product.all
-    #@product = Product.find(params[:id])
+    # @product = Product.find(params[:id])
     @cart_item = CartItem.new
   end
 

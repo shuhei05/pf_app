@@ -1,5 +1,4 @@
 class UserNoticesController < ApplicationController
-  
   before_action :authenticate_user!
 
   def index
@@ -25,5 +24,4 @@ class UserNoticesController < ApplicationController
   def user_notice_params
     params.require(:user_notice).permit(:information_title, :information_body)
   end
-
 end

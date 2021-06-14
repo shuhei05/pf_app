@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-
   before_action :authenticate_user!
 
   def index
@@ -15,8 +14,8 @@ class OrdersController < ApplicationController
   def create
     @order = current_user.orders.new(order_params)
     @order.save
-      @cart_items = current_user.cart_items.all
-      @cart_items.each do |cart_item|
+    @cart_items = current_user.cart_items.all
+    @cart_items.each do |cart_item|
       @order_detalis = @order.order_detalis.new
       @order_detalis.product_id = cart_item.product_id
       @order_detalis.quantity = cart_item.quantity
@@ -32,8 +31,8 @@ class OrdersController < ApplicationController
   end
 
   private
-  def order_params
-    params.require(:order).permit(:introduction,:user_id)
-  end
 
+  def order_params
+    params.require(:order).permit(:introduction, :user_id)
+  end
 end

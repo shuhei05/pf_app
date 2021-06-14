@@ -1,7 +1,5 @@
 class Admin::AdminNoticesController < ApplicationController
-
   before_action :authenticate_admin!
-
 
   def index
     @user_notices = UserNotice.order(created_at: :desc).page(params[:page]).per(3)
@@ -30,5 +28,4 @@ class Admin::AdminNoticesController < ApplicationController
   def admin_notice_params
     params.require(:admin_notice).permit(:information_title, :information_body)
   end
-
 end

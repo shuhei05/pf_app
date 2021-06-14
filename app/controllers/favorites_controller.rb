@@ -1,5 +1,4 @@
 class FavoritesController < ApplicationController
-
   before_action :authenticate_user!
 
   def create
@@ -15,5 +14,4 @@ class FavoritesController < ApplicationController
     favorite.destroy
     redirect_to shares_path(share)
   end
-
 end

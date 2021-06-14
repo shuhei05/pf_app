@@ -1,6 +1,4 @@
 class Admin::OrderDetalisController < ApplicationController
-
-
   private
 
   def order_detali_params

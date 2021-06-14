@@ -1,5 +1,4 @@
 class Share < ApplicationRecord
-
   belongs_to :user
   has_many :favorites, dependent: :destroy
 
@@ -8,5 +7,4 @@ class Share < ApplicationRecord
   end
 
   validates :share_information, :user_id, presence: true
-
 end

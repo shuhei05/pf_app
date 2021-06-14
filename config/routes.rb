@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-
   get 'chats/show'
-   devise_for :admins, controllers: {
-    sessions:      'admins/sessions',
-    passwords:     'admins/passwords',
+  devise_for :admins, controllers: {
+    sessions: 'admins/sessions',
+    passwords: 'admins/passwords',
   }
 
   devise_for :users, controllers: {
-    sessions:      'users/sessions',
-    passwords:     'users/passwords',
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
   }
 
   root :to => 'homes#top'
@@ -17,7 +16,7 @@ Rails.application.routes.draw do
     resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :orders, only: [:index, :show, :update]
     resources :order_details, only: [:update]
-    resources :admin_notices, only: [:index, :new, :create,] do
+    resources :admin_notices, only: [:index, :new, :create] do
       collection do
         get :users
       end
@@ -39,7 +38,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :orders, only: [:index, :show, :create,] do
+  resources :orders, only: [:index, :show, :create] do
     collection do
       post :confirm
       get :complete
