@@ -7,13 +7,4 @@ class ApplicationController < ActionController::Base
       shares_path # Userのログイン後
     end
   end
-
-  # def after_sign_out_path_for(resource)
-  #   case resource
-  #   when Admin
-  #     root_path            #Adminのログアウト後
-  #   when User
-  #     root_path            #Userのログアウト後
-  #   end
-  # end
 end
