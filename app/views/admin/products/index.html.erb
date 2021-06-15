@@ -11,7 +11,7 @@
           <th>商品概要</th>
           <th>販売状況</th>
           <th>販売状況編集</th>
-          <th></th>
+          <!--<th></th>-->
         </tr>
       </thead>
       <tbody>
@@ -33,7 +33,7 @@
               <%= f.submit '変更を保存', class:'btn btn-outline-success'%>
               <% end %>
             <%#= link_to"編集",edit_admin_product_path(product.id), class:"btn btn-success" %></td>
-          <td><%= link_to"削除",admin_product_path(product.id), method: :delete, class:"btn btn-danger" %></td>
+          <!--<td><%#= link_to"削除",admin_product_path(product.id), method: :delete, class:"btn btn-danger" %></td>-->
         </tr>
         <% end %>
       </tbody>
