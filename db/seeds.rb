@@ -59,7 +59,7 @@ Product.create!(
   name: "湯種",
   introduction: "3k")
 
-Product.crate!(
+Product.create!(
   name: "蜂蜜",
   introduction: "800g")
 
