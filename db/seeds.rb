@@ -38,3 +38,59 @@ User.create!(
   name: "dさん",
   postal_code: "444444",
   phone_number: "44444444444")
+
+Product.create!(
+  name: "塩",
+  introduction: "1k")
+
+Product.create!(
+  name: "砂糖",
+  introduction: "2k")
+
+Product.create!(
+  name: "ドライイースト",
+  introduction: "500g")
+
+Product.create!(
+  name: "ミックス粉",
+  introduction: "12k")
+
+Product.create!(
+  name: "湯種",
+  introduction: "3k")
+
+Product.crate!(
+  name: "蜂蜜",
+  introduction: "800g")
+
+Product.create!(
+  name: "生クリーム",
+  introduction: "1ℓ")
+
+Product.create!(
+  name: "牛乳",
+  introduction: "1ℓ")
+
+Product.create!(
+  name: "バター",
+  introduction: "500g")
+
+Product.create!(
+  name: "卵黄",
+  introduction: "1ℓ")
+
+Product.create!(
+  name: "クリームチーズ",
+  introduction: "500g")
+
+Product.create!(
+  name: "米油",
+  introduction: "500g")
+
+Product.create!(
+  name: "いちごジャム",
+  introduction: "100g")
+
+Product.create!(
+  name: "ブルーベリージャム",
+  introduction: "100g")
