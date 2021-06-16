@@ -23,6 +23,12 @@ class Admin::AdminNoticesController < ApplicationController
     end
   end
 
+  def destroy
+    @user_notice = UserNotice.find(params[:id])
+    @user_notice.destroy
+    redirect_to admin_admin_notices_path, notice: "削除しました"
+  end
+
   private
 
   def admin_notice_params
