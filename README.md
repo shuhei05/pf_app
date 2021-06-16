@@ -19,17 +19,17 @@
 主に飲食店で働く方々。また飲食店と提携している受注先の方々。
 
 ### 主な利用シーン
-・商品の発注<br>
-・商品の在庫管理<br>
-・共有事項を投稿<br>
-・従業員間で業務的なやりとりが必要な場合<br>
-・商品の受注確認<br>
-・受注可能商品の管理
+- 商品の発注
+- 商品の在庫管理
+- 共有事項を投稿
+- 従業員間で業務的なやりとりが必要な場合
+- 商品の受注確認
+- 受注可能商品の管理
 
 ## 設計書
-ER図：https://app.diagrams.net/#G1yhjcJhrydmq20zw4r-AcK9F8vZlq07jn<br>
-テーブル定義書：https://docs.google.com/spreadsheets/d/1scPZaVfa8VkgmMR-4LqWdUgj8xiaHLLd-cJFGhprWIs/edit#gid=514769212<br>
-アプリケーション詳細設計：https://docs.google.com/spreadsheets/d/1aBSYYdLyipWL5WGxUrwqPX-cZjhZrIoPJeyd529afiM/edit#gid=563437082
+- ER図：https://app.diagrams.net/#G1yhjcJhrydmq20zw4r-AcK9F8vZlq07jn
+- テーブル定義書：https://docs.google.com/spreadsheets/d/1scPZaVfa8VkgmMR-4LqWdUgj8xiaHLLd-cJFGhprWIs/edit#gid=514769212
+- アプリケーション詳細設計：https://docs.google.com/spreadsheets/d/1aBSYYdLyipWL5WGxUrwqPX-cZjhZrIoPJeyd529afiM/edit#gid=563437082
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/10astIslC0Chfl2QMfH3LwkI2rQjZuWIpRzrNcmxJ2II/edit#gid=0
