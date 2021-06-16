@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     resources :products, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :orders, only: [:index, :show, :update]
     resources :order_details, only: [:update]
-    resources :admin_notices, only: [:index, :new, :create] do
+    resources :admin_notices, only: [:index, :new, :create, :destroy] do
       collection do
         get :users
       end
@@ -49,7 +49,7 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
 
-  resources :user_notices, only: [:index, :new, :create]
+  resources :user_notices, only: [:index, :new, :create, :destroy]
 
   get 'chat/:id' => 'chats#show', as: 'chat'
   resources :chats, only: [:create]
