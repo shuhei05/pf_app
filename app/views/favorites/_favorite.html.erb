@@ -1,13 +1,13 @@
-  <% if share.favorited_by?(current_user) %>
+<% if share.favorited_by?(current_user) %>
    <div class='text-right mr-5'>
-        <%= link_to share_favorites_path(share), method: :delete do %>
-          <i class="fas fa-check fa-lg check1"></i><%= share.favorites.count %>
-        <% end %>
+      <%= link_to share_favorites_path(share), method: :delete do %>
+        <i class="fas fa-check fa-lg check1"></i><%= share.favorites.count %>
+      <% end %>
    </div>
-        <% else %>
+      <% else %>
    <div class='text-right mr-5'>
-        <%= link_to share_favorites_path(share), method: :post do %>
-          <i class="fas fa-check fa-lg check2"></i><%= share.favorites.count %>
-        <% end %>
+      <%= link_to share_favorites_path(share), method: :post do %>
+        <i class="fas fa-check fa-lg check2"></i><%= share.favorites.count %>
+      <% end %>
    </div>
-  <% end %>
+<% end %>

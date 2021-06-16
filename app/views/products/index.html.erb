@@ -3,7 +3,7 @@
     <div class="col-6">
       <h3>店舗在庫管理</h3>
       <%= form_with model: Product, url: update_all_products_url, method: :post, local: true, class: 'table' do |f| %>
-      <table class="table table-bordered border-dark table_border_radius table-light">
+       <table class="table table-bordered border-dark table_border_radius table-light">
         <thead>
           <tr>
             <th>商品名</th>
@@ -13,58 +13,58 @@
         </thead>
         <tbody>
           <% @products.each do |product| %>
-            <tr>
-              <%= f.hidden_field 'product[][id]', value: product.id %> <!--商品idを配列で渡す-->
-              <td><%= product.name %></td>
-              <td><%= product.introduction %></td>
-              <td><%= f.select 'product[][quantity]', [*(0..100)], {selected: product.quantity} %></td> <!--商品の個数を配列で渡す-->
-            </tr>
+           <tr>
+            <%= f.hidden_field 'product[][id]', value: product.id %> <!--商品idを配列で渡す-->
+            <td><%= product.name %></td>
+            <td><%= product.introduction %></td>
+            <td><%= f.select 'product[][quantity]', [*(0..100)], {selected: product.quantity} %></td> <!--商品の個数を配列で渡す-->
+           </tr>
           <% end %>
-            <tr>
+           <tr>
             <td colspan='3' style="text-align: end"><%= f.submit "更新", class: "btn btn-outline-primary" %></td>
-          </tr>
-         </tbody>
-        </table>
+           </tr>
+        </tbody>
+       </table>
       <% end %>
     </div>
 
     <div class="col-6">
-    <h3>発注可能商品一覧</h3>
-    <%= form_with model: @cart_item, url: cart_items_path(@cart_item), local: true, class: 'table' do |f| %>
-    <table class="table table-bordered border-dark table_border_radius table-light">
-      <thead>
-        <tr>
-          <th>商品名</th>
-          <th>商品概要</th>
-          <th>発注数</th>
-          <th>販売状況</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @products.each do |product| %>
-          <tr>
-            <%= f.hidden_field 'cart_item[][product_id]', value: product.id %> <!--カートアイテムモデルの商品idを配列で渡す-->
-            <td><%= product.name %></td>
-            <td><%= product.introduction %></td>
-            <td><% if product.is_active == false %>
-                <%= f.select 'cart_item[][quantity]', [*(0..20)], {selected: 0} %>
-                <% else %>
-                ×</td> <!--カートアイテムモデルの個数を配列で渡す-->
-                <% end %>
-            <td><% if product.is_active == false %>
-                  <div class="text-success">注文可能</div>
-                <% else %>
-                  <div class="text-black-50">注文不可</div>
-                <% end %>
-            </td>
-          </tr>
-        <% end %>
-        <tr>
-          <td colspan='4' style='text-align: end'><%= f.submit "発注", class: "btn btn-outline-success" %></td>
-        </tr>
-       </tbody>
-      </table>
-    <% end %>
+     <h3>発注可能商品一覧</h3>
+      <%= form_with model: @cart_item, url: cart_items_path(@cart_item), local: true, class: 'table' do |f| %>
+        <table class="table table-bordered border-dark table_border_radius table-light">
+          <thead>
+            <tr>
+              <th>商品名</th>
+              <th>商品概要</th>
+              <th>発注数</th>
+              <th>販売状況</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @products.each do |product| %>
+              <tr>
+                <%= f.hidden_field 'cart_item[][product_id]', value: product.id %> <!--カートアイテムモデルの商品idを配列で渡す-->
+                <td><%= product.name %></td>
+                <td><%= product.introduction %></td>
+                <td><% if product.is_active == false %>
+                    <%= f.select 'cart_item[][quantity]', [*(0..20)], {selected: 0} %>
+                    <% else %>
+                    ×</td> <!--カートアイテムモデルの個数を配列で渡す-->
+                    <% end %>
+                <td><% if product.is_active == false %>
+                      <div class="text-success">注文可能</div>
+                    <% else %>
+                      <div class="text-black-50">注文不可</div>
+                    <% end %>
+                </td>
+              </tr>
+            <% end %>
+            <tr>
+              <td colspan='4' style='text-align: end'><%= f.submit "発注", class: "btn btn-outline-success" %></td>
+            </tr>
+           </tbody>
+        </table>
+      <% end %>
     </div>
   </div>
 </div>

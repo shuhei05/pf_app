@@ -2,47 +2,47 @@
   <h3>発注詳細</h3>
   <div class="row">
     <div class="col-md-6">
-    <table class="table table-bordered border-dark table_border_radius table-light">
-      <thead>
-        <tr>
-          <th>発注日</th>
-          <th>発注者</th>
-          <th>発送状況</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><%= @order.created_at.strftime("%Y/%m/%d")%></td>
-          <td><%= @order.user.name %></td>
-          <td><% if @order.is_active == false %>
+      <table class="table table-bordered border-dark table_border_radius table-light">
+        <thead>
+          <tr>
+            <th>発注日</th>
+            <th>発注者</th>
+            <th>発送状況</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @order.created_at.strftime("%Y/%m/%d")%></td>
+            <td><%= @order.user.name %></td>
+            <td><% if @order.is_active == false %>
                   <p class="text-black-50">未発送</p>
                 <% else %>
                   <p class="text-success">発送済み</p>
                 <% end %></td>
-        </tr>
-      </tbody>
-    </table>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div class="col-md-6">
       <table class="table table-bordered table_border_radius table-light border-dark">
-      <thead>
-        <tr>
-          <th>注文商品</th>
-          <th>商品概要</th>
-          <th>注文個数</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @order_detalis.each do |order_detali| %>
-        <tr>
-          <td><%= order_detali.product.name %></td>
-          <td><%= order_detali.product.introduction %></td>
-          <td><%= order_detali.quantity %></td>
-        </tr>
-      </tbody>
-      <% end %>
-    </table>
+        <thead>
+          <tr>
+            <th>注文商品</th>
+            <th>商品概要</th>
+            <th>注文個数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @order_detalis.each do |order_detali| %>
+          <tr>
+            <td><%= order_detali.product.name %></td>
+            <td><%= order_detali.product.introduction %></td>
+            <td><%= order_detali.quantity %></td>
+          </tr>
+        </tbody>
+         <% end %>
+      </table>
     </div>
   </div>
-  <div class="text-right mr-3"><%= link_to "注文一覧へ", orders_path, class: 'btn btn-info' %></div>
+ <div class="text-right mr-3"><%= link_to "注文一覧へ", orders_path, class: 'btn btn-info' %></div>
 </div>

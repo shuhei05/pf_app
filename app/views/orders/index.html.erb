@@ -16,15 +16,15 @@
           <td><%= order.created_at.strftime("%Y/%m/%d")%></td>
           <td><%= order.user.name %></td>
           <td><% if order.is_active == false %>
-                  <p class="text-black-50">未発送</p>
-                <% else %>
-                  <p class="text-success">発送済み</p>
-                <% end %></td>
+                <p class="text-black-50">未発送</p>
+              <% else %>
+                <p class="text-success">発送済み</p>
+              <% end %></td>
           <td><%= link_to"発注詳細へ",order_path(order.id), class:"btn btn-info" %></td>
         </tr>
         <% end %>
       </tbody>
     </table>
-    <div class="mx-auto"><%= paginate @orders%></div>
+   <div class="mx-auto"><%= paginate @orders%></div>
   </div>
 </div>
