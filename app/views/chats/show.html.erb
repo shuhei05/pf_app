@@ -4,7 +4,7 @@
         <tr>
           <tr>
            <th style="text-align: left; font-size: 30px;"><%= @user.name %></th>
-           <th style="text-align: right; font-size: 30px;"><%= current_user.name %></th>
+           <th style="text-align: right; font-size: 30px; color:#3CB371;"><%= current_user.name %></th>
         </tr>
     </thead>
         <% @chats.each do |chat| %>
@@ -13,7 +13,7 @@
                 <tr>
                   <td></td>
                   <td>
-                    <p style="text-align: right; font-size: 15px;"><%= chat.message%>
+                    <p style="text-align: right; font-size: 15px; color:#3CB371;"><%= chat.message%>
                     <span style="font-size:small;"><%=chat.created_at.strftime("：%-d日%k時%-M分")%></spnn></p>
                   </td>
                 </tr>
