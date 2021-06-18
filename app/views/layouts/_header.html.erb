@@ -15,6 +15,7 @@
           <li><%= link_to '発注元からのお知らせ', admin_admin_notices_path,class: 'nav-link text-dark' %></li>
           <li><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete,class: 'nav-link text-dark' %></li>
         <% elsif user_signed_in? %>
+          <li><%= link_to 'カレンダー', events_path,class: 'nav-link text-dark' %></li>
           <li><%= link_to '従業員一覧', users_path,class: 'nav-link text-dark' %></li>
           <li><%= link_to '商品一覧', products_path,class: 'nav-link text-dark' %></li>
           <li><%= link_to 'カート', cart_items_path,class: 'nav-link text-dark' %></li>

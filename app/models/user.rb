@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :rooms, through: :user_rooms
   has_many :favorites, dependent: :destroy
   has_many :admin_notices, dependent: :destroy
+  has_many :events, dependent: :destroy
 
   validates :email, :name, :postal_code, :phone_number, presence: true
 

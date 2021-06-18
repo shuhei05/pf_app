@@ -1,0 +1,19 @@
+<div class="container">
+  <%= form_with model: @event, local:true do |f| %>
+  <%= render 'layouts/error', model: f.object %>
+    <h3>予定内容編集</h3>
+      <div class="row">
+        <div class="form-group ml-3" style="width:50rem;">
+           <label for="title">タイトル</label><br>
+           <%= f.text_field :title,class:'col-9' %><br>
+           <label for="body">内容</label><br>
+           <%= f.text_area :body,class:'col-9' %><br>
+           <label for="start_date">開始時刻</label><br>
+           <%= f.datetime_select :start_date %><br>
+           <label for="end_date">終了時刻</label><br>
+           <%= f.datetime_select :end_date %><br>
+           <%= f.submit '変更', class:'btn btn-info' %>
+        </div>
+      </div>
+  <% end %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_11_053934) do
+ActiveRecord::Schema.define(version: 2021_06_18_141731) do
 
   create_table "admin_notices", force: :cascade do |t|
     t.string "information_title"
@@ -46,6 +46,16 @@ ActiveRecord::Schema.define(version: 2021_06_11_053934) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.string "body"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "favorites", force: :cascade do |t|

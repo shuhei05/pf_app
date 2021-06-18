@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'chats/show'
+
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
     passwords: 'admins/passwords',
@@ -53,6 +53,8 @@ Rails.application.routes.draw do
 
   get 'chat/:id' => 'chats#show', as: 'chat'
   resources :chats, only: [:create]
+
+  resources :events
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
