@@ -1,11 +1,11 @@
 <div class="container mt-3 mr-5">
   <h3>従業員一覧</h3>
-  <span class=admin-phone_number>受注先電話番号：00000000000</span>
+  <span class=admin-phone_number><i class="fas fa-phone-alt"></i> 受注先電話番号：00000000000</span>
   <div class="row">
     <div class="d-flex flex-wrap mt-3 ml-3">
       <% @users.each do |user| %>
       <div class="card border-dark mr-3 mb-3" style="width: 20rem;">
-        <div class="card-header" style="background-color: #FFE4E1;"><%= user.name %></div>
+        <div class="card-header" style="background-color: #FFE4E1;"><i class="fas fa-address-card"></i> <%= user.name %></div>
         <div class="card-body text-secondary">
           <p class="card-text">email:<%= user.email %></p>
           <p class="card-text">緊急連絡先:<%= user.phone_number %></p>
