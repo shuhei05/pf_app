@@ -61,3 +61,21 @@ h3 {
 .table > tbody > tr > td{
     border:1px solid #C0C0C0;
 }
+
+.grow {
+  transition-duration: 0.5s;
+}
+
+.grow:hover {
+  transform: scale(1.05);
+  transition-duration: 0.5s;
+}
+
+li {
+  transition-duration: 0.5s;
+}
+
+li:hover {
+  transform: scale(1.05);
+  transition-duration: 0.5s;
+}
