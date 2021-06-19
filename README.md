@@ -35,7 +35,7 @@
 https://docs.google.com/spreadsheets/d/10astIslC0Chfl2QMfH3LwkI2rQjZuWIpRzrNcmxJ2II/edit#gid=0
 
 ## AWS構成図
-![AWS構成図](https://user-images.githubusercontent.com/79987446/122650570-b482a280-d16e-11eb-91ce-e845577e38dd.png)
+![AWS構成図](https://user-images.githubusercontent.com/79987446/122650639-13e0b280-d16f-11eb-9a65-29ef6c17d66e.png)
 
 ## 開発環境
 - OS：Linux(CentOS)
