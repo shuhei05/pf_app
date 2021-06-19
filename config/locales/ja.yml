@@ -2,13 +2,13 @@ ja:
   activerecord:
     attributes:
       share:
-        share_information_title: タイトル
-        share_information: 共有事項
+        share_information_title: 件名
+        share_information: 内容
       user_notice:
-        information_title: タイトル
+        information_title: 件名
         information_body: 内容
       admin_notice:
-        information_title: タイトル
+        information_title: 件名
         information_body: 内容
       product:
         name: 商品名
