@@ -34,6 +34,9 @@
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/10astIslC0Chfl2QMfH3LwkI2rQjZuWIpRzrNcmxJ2II/edit#gid=0
 
+##動作Gif
+![circleAnimationMuvie](https://user-images.githubusercontent.com/79987446/122666937-213b8280-d1eb-11eb-9ecf-570620cc3430.gif)
+
 ## AWS構成図
 ![AWS構成図](https://user-images.githubusercontent.com/79987446/122650639-13e0b280-d16f-11eb-9a65-29ef6c17d66e.png)
 
