@@ -4,6 +4,8 @@ class Admin < ApplicationRecord
 
   has_many :admin_notices, dependent: :destroy
 
+  validates :email, :password, presence: true
+
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
 end

@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :admin_notices, dependent: :destroy
   has_many :events, dependent: :destroy
 
-  validates :email, :name, :postal_code, :phone_number, presence: true
+  validates :email, :name, :password, :postal_code, :phone_number, presence: true
 
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
