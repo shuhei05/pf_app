@@ -1,6 +1,10 @@
 <div class="container">
   <div class="row">
     <h3 class="ml-5">受注元からのお知らせ</h3>
+      <% if @admin_notices.empty?%>
+        <h3 style="margin:100px 0 0 100px;">お知らせはありません <i class="fas fa-share"></i></h3>
+        <div class="ml-auto"><%= link_to"受注先へのお知らせ作成",new_user_notice_path, class:"btn btn-secondary" %></div>
+      <% else %>
     <div class="ml-auto"><%= link_to"受注先へのお知らせ作成",new_user_notice_path, class:"btn btn-secondary" %></div>
   </div>
   <div class="row">
@@ -26,4 +30,5 @@
   <div class="row">
     <div class="mx-auto"><%= paginate @admin_notices%></div>
   </div>
+  <% end %>
 </div>

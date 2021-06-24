@@ -3,7 +3,7 @@
   <div class="row">
     <% if @cart_items.empty?%>
       <div class="w-auto mx-auto mt-3">
-        <h3 class="mt-3 ml-3">カート内に商品がありません <i class="fas fa-cart-arrow-down"></i></i></h3>
+        <h3 class="mt-3 ml-3">カート内に商品がありません <i class="fas fa-cart-arrow-down"></i></h3>
         <div style="text-align: center; margin-top: 50px;"><%= link_to "商品一覧へ", products_path, class: "btn btn-info" %></div>
       </div>
     <% else %>
