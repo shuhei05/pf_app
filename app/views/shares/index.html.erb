@@ -1,6 +1,10 @@
 <div class="container">
   <div class="row">
     <h3 class="ml-5">共有事項</h3>
+     <% if @shares.empty?%>
+        <h3 style="margin:100px 0 0 280px">共有事項がありません <i class="fas fa-share"></i></h3>
+        <div class="ml-auto"><%= link_to"共有事項作成",new_share_path, class:"btn btn-secondary" %></div>
+     <% else %>
     <div class="ml-auto"><%= link_to"共有事項作成",new_share_path, class:"btn btn-secondary" %></div>
   </div>
   <div class="row">
@@ -30,4 +34,5 @@
   <div class="row">
     <div class="mx-auto"><%= paginate @shares%></div>
   </div>
+  <% end %>
 </div>
