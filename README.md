@@ -40,7 +40,7 @@ https://docs.google.com/spreadsheets/d/10astIslC0Chfl2QMfH3LwkI2rQjZuWIpRzrNcmxJ
 ![circleAnimationMuvie](https://user-images.githubusercontent.com/79987446/122666937-213b8280-d1eb-11eb-9ecf-570620cc3430.gif)
 
 ## AWS構成図
-![AWS構成図](https://user-images.githubusercontent.com/79987446/122962834-c196d000-d3c0-11eb-81b4-724b45862de2.png)
+![AWS構成図 (1)](https://user-images.githubusercontent.com/79987446/123262929-633e2e80-d533-11eb-82c0-72fc7abd215b.png)
 
 ## 開発環境
 - OS：Linux(CentOS)
