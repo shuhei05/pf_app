@@ -9,6 +9,6 @@ RSpec.describe AdminNotice,"モデルに関するテスト", type: :model do
       expect(admin_notice).to be_valid
     end
   end
-  it "is valid with a information_title and information_body"
-  it "is invalid without a information_title and information_body"
+  it "is valid with a information_title and information_body and admin_id"
+  it "is invalid without a information_title and information_body and admin_id"
 end
