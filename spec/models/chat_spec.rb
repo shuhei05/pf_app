@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Chat,"モデルに関するテスト", type: :model do
-  it "is valid with a message"
-  it "is invalid without a message"
+  describe '実際に保存してみる' do
+	    it "チャット保存" do
+	      expect(FactoryBot.build(:chat)).to be_valid
+	    end
+	  end
 end

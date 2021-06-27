@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Product,"モデルに関するテスト", type: :model do
-  it "is valid with a name and introduction"
-  it "is invalid without a name and introduction"
+   describe '実際に保存してみる' do
+	    it "商品登録" do
+	      expect(FactoryBot.build(:product)).to be_valid
+	    end
+	  end
 end
