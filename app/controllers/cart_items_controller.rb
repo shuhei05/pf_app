@@ -48,7 +48,6 @@ class CartItemsController < ApplicationController
   # viewから送られてきたカートに追加したい商品
   # ただし, quantityが0のものも送られてくるので事前フィルタリングする
   def cart_item_params
-    # params.require(:cart_item).permit(:quantity,:product_id,:user_id)
     params.require(:cart_item).permit(cart_item: [:product_id, :quantity])["cart_item"].filter do |cart_item_param|
       cart_item_param['quantity'] != '0'
     end
