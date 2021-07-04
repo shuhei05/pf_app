@@ -28,6 +28,15 @@
 - 商品の受注確認
 - 受注可能商品の管理
 
+### テストユーザ
+#### 発注者
+- aさん：メールアドレス aaa@aaa,パスワード aaaaaa
+- bさん：メールアドレス bbb@bbb,パスワード bbbbbb
+- cさん：メールアドレス ccc@ccc,パスワード cccccc
+- dさん：メールアドレス ddd@ddd,パスワード dddddd
+#### 受注者
+- aさん：メールアドレス aaa@aaa,パスワード aaaaaa
+
 ## 設計書
 - ER図：https://app.diagrams.net/#G1yhjcJhrydmq20zw4r-AcK9F8vZlq07jn
 - テーブル定義書：https://docs.google.com/spreadsheets/d/1scPZaVfa8VkgmMR-4LqWdUgj8xiaHLLd-cJFGhprWIs/edit#gid=514769212
