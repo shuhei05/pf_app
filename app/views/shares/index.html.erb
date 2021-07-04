@@ -19,7 +19,9 @@
               </div>
               <div class="card-body">
                 <p class="card-text"><%= share.share_information %></p>
-                  <%= render 'favorites/favorite', share: share %>
+                <div id="share_<%= share.id %>">
+                <div class="favorite-btn"><%= render 'favorites/favorite', share: share %></div>
+                </div>
                 <% if share.user == current_user %>
                 <%= link_to"編集",edit_share_path(share.id), class:"btn btn-secondary" %>
                 <%= link_to"削除",share_path(share.id), method: :delete, data: { confirm: "【確認】削除してもよろしいですか？" },class:"btn btn-secondary" %>

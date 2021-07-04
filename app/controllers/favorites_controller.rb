@@ -12,6 +12,6 @@ class FavoritesController < ApplicationController
     share = Share.find(params[:share_id])
     favorite = current_user.favorites.find_by(share_id: share.id)
     favorite.destroy
-    redirect_to shares_path(share)
+    redirect_to shares_path
   end
 end

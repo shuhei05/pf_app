@@ -1,12 +1,12 @@
 <% if share.favorited_by?(current_user) %>
    <div class='text-right mr-5'>
-      <%= link_to share_favorites_path(share), method: :delete do %>
+      <%= link_to share_favorites_path(share), method: :delete, remote: true do %>
         <i class="fas fa-check fa-lg check1"></i><%= share.favorites.count %>
       <% end %>
    </div>
       <% else %>
    <div class='text-right mr-5'>
-      <%= link_to share_favorites_path(share), method: :post do %>
+      <%= link_to share_favorites_path(share), method: :post, remote: true do %>
         <i class="fas fa-check fa-lg check2"></i><%= share.favorites.count %>
       <% end %>
    </div>
